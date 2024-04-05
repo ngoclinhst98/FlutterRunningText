@@ -4,7 +4,7 @@ disappearing.
 
 ## Features
 
-https://github.com/ngoclinhst98/FlutterRunningText/assets/65496918/3ec0fa35-06ff-46fc-8d73-b2b089cb5c40
+[feature.webm](https://github.com/ngoclinhst98/FlutterRunningText/assets/65496918/807086c5-8ffe-4660-85e2-515a7bcba7e1)
 
 ## Usage
 
