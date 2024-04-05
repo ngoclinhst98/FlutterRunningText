@@ -4,7 +4,7 @@ disappearing.
 
 ## Features
 
-[feature.mp4](..%2F..%2F..%2F..%2FDownloads%2Ffeature.mp4)
+https://github.com/ngoclinhst98/FlutterRunningText/assets/65496918/3ec0fa35-06ff-46fc-8d73-b2b089cb5c40
 
 ## Usage
 
