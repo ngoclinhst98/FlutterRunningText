@@ -1,6 +1,5 @@
-Flutter widget "running text". Allows running an list string. Allows running an array string.
-Provides customizations including two horizontal directions, velocity, fading when appearing or
-disappearing.
+Flutter widget "running text". Allows running an string list. Provides customizations including two
+horizontal directions, velocity, fading when appearing or disappearing.
 
 ## Features
 
