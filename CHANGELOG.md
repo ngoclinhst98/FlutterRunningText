@@ -13,3 +13,7 @@ Update example for the package
 ## 0.0.4
 
 Update some information for the package
+
+## 0.0.5
+
+Update description for the package
