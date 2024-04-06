@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:running_text/src/controller.dart';
 import 'package:running_text/src/model.dart';
 
-/* Running Text widget with data
-RunningTextView(
-  data: RunningTextModel([
-    "Learn how to find target keywords",
-    "Learn how to find target keywords for any page with our keyword research guide."
-  ])
-)*/
+/// Running Text widget with data
+/// RunningTextView(
+///   data: RunningTextModel([
+///   "Learn how to find target keywords",
+///   "Learn how to find target keywords for any page with our keyword research guide."
+///   ])
+/// )
 
 class RunningTextView extends StatefulWidget {
   const RunningTextView({super.key, required this.data});
 
-  final RunningTextModel
-      data; // Data options for list content, text style, velocity, ...
+  /// Data options for list content, text style, velocity, ...
+  final RunningTextModel data;
 
   @override
   State<RunningTextView> createState() => _RunningTextViewState();
@@ -22,17 +22,28 @@ class RunningTextView extends StatefulWidget {
 
 class _RunningTextViewState extends State<RunningTextView>
     with TickerProviderStateMixin {
+  /// Running text controller
   late final RunningTextController _controller =
-      RunningTextController(widget.data); // Running text controller
-  late AnimationController _animationController; // Animation controller
-  late Animation<double> _animation; // Animation double
-  Function(AnimationStatus)? statusListener; // Function status listener
-  int _currentTextIndex = 0; // Index of current text content
+      RunningTextController(widget.data);
+
+  /// Animation controller
+  late AnimationController _animationController;
+
+  /// Animation double
+  late Animation<double> _animation;
+
+  /// Function status listener
+  Function(AnimationStatus)? statusListener;
+
+  /// Index of current text content
+  int _currentTextIndex = 0;
 
   @override
   void initState() {
     super.initState();
-    _controller.textStyleProcessing(); // Text style processing
+
+    /// Text style processing
+    _controller.textStyleProcessing();
   }
 
   @override
@@ -43,7 +54,7 @@ class _RunningTextViewState extends State<RunningTextView>
 
   @override
   Widget build(BuildContext context) {
-    // Use LayoutBuilder to get the maximum width of the current widget
+    /// Use LayoutBuilder to get the maximum width of the current widget
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         _controller.textWidthProcessing(_currentTextIndex, context);
@@ -90,7 +101,7 @@ class _RunningTextViewState extends State<RunningTextView>
     );
   }
 
-  // Function listen status
+  /// Function listen status
   listenStatus(status) {
     if (status != AnimationStatus.completed) {
       return;

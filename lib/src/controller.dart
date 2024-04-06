@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:running_text/src/model.dart';
 
 class RunningTextController {
-  RunningTextModel
-      runningTextData; // Data options for list content, text style, velocity, ...
+  /// Data options for list content, text style, velocity, ...
+  RunningTextModel runningTextData;
 
   RunningTextController(this.runningTextData);
 
-  double currentTextWidth =
-      0; // The current width of the currently displayed text
+  /// The current width of the currently displayed text
+  double currentTextWidth = 0;
 
-  // Handle text style: if text size is not set, set it to 16 and display overflow text.
+  /// Handle text style: if text size is not set, set it to 16 and display overflow text.
   textStyleProcessing() {
     TextStyle textStyle = runningTextData.textStyle ??
         const TextStyle(overflow: TextOverflow.visible);
@@ -21,7 +21,7 @@ class RunningTextController {
     runningTextData.textStyle = textStyle;
   }
 
-  // Calculate the width of each displayed text content
+  /// Calculate the width of each displayed text content
   textWidthProcessing(int index, BuildContext context) {
     final TextPainter textPainter = TextPainter(
       text: TextSpan(text: getTextAt(index), style: runningTextData.textStyle),
@@ -30,7 +30,7 @@ class RunningTextController {
     currentTextWidth = textPainter.width;
   }
 
-  // Get the running text time
+  /// Get the running text time
   int getTime(double widgetMaxWidth) {
     final double distance =
         widgetMaxWidth > currentTextWidth ? widgetMaxWidth : currentTextWidth;
@@ -38,7 +38,7 @@ class RunningTextController {
     return (distance / runningTextData.velocity * 1000000).ceil();
   }
 
-  // Gets the start and end positions of running text
+  /// Gets the start and end positions of running text
   (double, double) getPoint(double widgetMaxWidth) {
     switch (runningTextData.direction) {
       case RunningTextDirection.leftToRight:
@@ -48,12 +48,12 @@ class RunningTextController {
     }
   }
 
-  // Get text at the specified position
+  /// Get text at the specified position
   String getTextAt(int index) {
     return runningTextData.texts.elementAtOrNull(index) ?? "";
   }
 
-  // Blur running text
+  /// Blur running text
   ShaderMask makeFade(double widgetMaxWidth, double fadeWidth, Widget child) {
     switch (runningTextData.fadeSide) {
       case RunningTextFadeSide.both:
@@ -80,7 +80,7 @@ class RunningTextController {
     }
   }
 
-  // Get shader mask
+  /// Get shader mask
   ShaderMask _getShaderMask(
       RunningTextDirection direction, Offset beginPoint, Offset endPoint,
       [Widget? child]) {
@@ -100,7 +100,7 @@ class RunningTextController {
     );
   }
 
-  // Get linear gradient alignment
+  /// Get linear gradient alignment
   (Alignment, Alignment) _getLinearGradientAlignment(
       RunningTextDirection direction) {
     switch (direction) {
