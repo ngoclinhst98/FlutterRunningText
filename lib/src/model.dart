@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class RunningTextModel {
-  List<String> texts;
-  TextStyle? textStyle;
-  double velocity;
-  RunningTextDirection direction;
-  RunningTextFadeSide fadeSide;
+  List<String> texts; // The text list content will run
+  TextStyle? textStyle; // The text style for content
+  double velocity; // Running text velocity
+  RunningTextDirection direction; // Running direction
+  RunningTextFadeSide fadeSide; // The edges of the Running Text will be blurred
 
   RunningTextModel(this.texts,
       {this.textStyle,
@@ -14,6 +14,15 @@ class RunningTextModel {
       this.fadeSide = RunningTextFadeSide.both});
 }
 
-enum RunningTextDirection { leftToRight, rightToLeft }
+// Direction of movement of Running Text
+enum RunningTextDirection {
+  leftToRight, // Move from left to right.
+  rightToLeft // Move from right to left
+}
 
-enum RunningTextFadeSide { left, right, both }
+// The edges of the Running Text will be blurred
+enum RunningTextFadeSide {
+  left, // The left edge of the text
+  right, // The right edge of the text
+  both // The both edges of the text
+}

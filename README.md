@@ -1,4 +1,4 @@
-Flutter widget "running text". Allows running an array string. Allows running an array string.
+Flutter widget "running text". Allows running an list string. Allows running an array string.
 Provides customizations including two horizontal directions, velocity, fading when appearing or
 disappearing.
 
@@ -30,3 +30,7 @@ RunningTextView(
   )
 )
 ```
+
+## Note
+
+If you use Running Text in AppBar as Title, you need to adjust titleTextStyle to match the textStyle data of Running Text

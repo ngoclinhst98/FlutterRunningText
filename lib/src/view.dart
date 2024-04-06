@@ -2,10 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:running_text/src/controller.dart';
 import 'package:running_text/src/model.dart';
 
+/* Running Text widget with data
+RunningTextView(
+  data: RunningTextModel([
+    "Learn how to find target keywords",
+    "Learn how to find target keywords for any page with our keyword research guide."
+  ])
+)*/
+
 class RunningTextView extends StatefulWidget {
   const RunningTextView({super.key, required this.data});
 
-  final RunningTextModel data;
+  final RunningTextModel
+      data; // Data options for list content, text style, velocity, ...
 
   @override
   State<RunningTextView> createState() => _RunningTextViewState();
@@ -14,16 +23,16 @@ class RunningTextView extends StatefulWidget {
 class _RunningTextViewState extends State<RunningTextView>
     with TickerProviderStateMixin {
   late final RunningTextController _controller =
-  RunningTextController(widget.data);
-  late AnimationController _animationController;
-  late Animation<double> _animation;
-  Function(AnimationStatus)? statusListener;
-  int _currentTextIndex = 0;
+      RunningTextController(widget.data); // Running text controller
+  late AnimationController _animationController; // Animation controller
+  late Animation<double> _animation; // Animation double
+  Function(AnimationStatus)? statusListener; // Function status listener
+  int _currentTextIndex = 0; // Index of current text content
 
   @override
   void initState() {
     super.initState();
-    _controller.textStyleProcessing();
+    _controller.textStyleProcessing(); // Text style processing
   }
 
   @override
@@ -34,6 +43,7 @@ class _RunningTextViewState extends State<RunningTextView>
 
   @override
   Widget build(BuildContext context) {
+    // Use LayoutBuilder to get the maximum width of the current widget
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         _controller.textWidthProcessing(_currentTextIndex, context);
@@ -80,6 +90,7 @@ class _RunningTextViewState extends State<RunningTextView>
     );
   }
 
+  // Function listen status
   listenStatus(status) {
     if (status != AnimationStatus.completed) {
       return;
