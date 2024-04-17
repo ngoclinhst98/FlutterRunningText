@@ -55,7 +55,8 @@ class _RunningTextViewState extends State<RunningTextView>
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         final double widgetMaxWidth = constraints.maxWidth;
-        _controller.textWidthProcessing(_currentTextIndex, context, widgetMaxWidth);
+        _controller.textWidthProcessing(
+            _currentTextIndex, context, widgetMaxWidth);
         final double fadeWidth = widgetMaxWidth / 20;
         final (double, double) point = _controller.getPoint(widgetMaxWidth);
         final int time = _controller.getTime(widgetMaxWidth);

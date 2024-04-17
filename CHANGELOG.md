@@ -18,6 +18,6 @@ Update some information for the package
 
 Update description for the package
 
-## 0.0.6
+## 0.0.6 - 0.0.7
 
 Fix time gap error when text overflow
