@@ -17,3 +17,7 @@ Update some information for the package
 ## 0.0.5
 
 Update description for the package
+
+## 0.0.6
+
+Fix time gap error when text overflow
