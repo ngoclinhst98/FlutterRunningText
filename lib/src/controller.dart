@@ -10,23 +10,16 @@ class RunningTextController {
   /// The current width of the currently displayed text
   double currentTextWidth = 0;
 
-  /// Handle text style: if text size is not set, set it to 16 and display overflow text.
-  textStyleProcessing() {
-    TextStyle textStyle = runningTextData.textStyle ??
-        const TextStyle(overflow: TextOverflow.visible);
-    if (textStyle.fontSize == null) {
-      textStyle = textStyle.copyWith(fontSize: 16);
-    }
-
-    runningTextData.textStyle = textStyle;
-  }
-
   /// Calculate the width of each displayed text content
-  textWidthProcessing(int index, BuildContext context) {
+  textWidthProcessing(int index, BuildContext context, double maxWidth) {
+    double layoutMaxWidth = double.infinity;
+    if (runningTextData.textStyle?.overflow != TextOverflow.visible) {
+      layoutMaxWidth = maxWidth;
+    }
     final TextPainter textPainter = TextPainter(
       text: TextSpan(text: getTextAt(index), style: runningTextData.textStyle),
       textDirection: TextDirection.ltr,
-    )..layout(minWidth: 0, maxWidth: double.infinity);
+    )..layout(minWidth: 0, maxWidth: layoutMaxWidth);
     currentTextWidth = textPainter.width;
   }
 

@@ -17,10 +17,17 @@ class RunningTextModel {
   RunningTextFadeSide fadeSide;
 
   RunningTextModel(this.texts,
-      {this.textStyle,
+      {TextStyle? textStyle,
       this.velocity = 50,
       this.direction = RunningTextDirection.rightToLeft,
-      this.fadeSide = RunningTextFadeSide.both});
+      this.fadeSide = RunningTextFadeSide.both}) {
+    TextStyle textStyleTemp = textStyle ?? const TextStyle();
+    if (textStyleTemp.fontSize == null) {
+      textStyleTemp = textStyleTemp.copyWith(fontSize: 16);
+    }
+
+    this.textStyle = textStyleTemp;
+  }
 }
 
 /// Direction of movement of Running Text

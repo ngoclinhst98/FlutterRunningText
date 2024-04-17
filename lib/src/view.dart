@@ -41,9 +41,6 @@ class _RunningTextViewState extends State<RunningTextView>
   @override
   void initState() {
     super.initState();
-
-    /// Text style processing
-    _controller.textStyleProcessing();
   }
 
   @override
@@ -57,8 +54,8 @@ class _RunningTextViewState extends State<RunningTextView>
     /// Use LayoutBuilder to get the maximum width of the current widget
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        _controller.textWidthProcessing(_currentTextIndex, context);
         final double widgetMaxWidth = constraints.maxWidth;
+        _controller.textWidthProcessing(_currentTextIndex, context, widgetMaxWidth);
         final double fadeWidth = widgetMaxWidth / 20;
         final (double, double) point = _controller.getPoint(widgetMaxWidth);
         final int time = _controller.getTime(widgetMaxWidth);

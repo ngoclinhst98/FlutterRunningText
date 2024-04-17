@@ -142,10 +142,10 @@ packages:
   running_text:
     dependency: "direct main"
     description:
-      path: "/Users/vnpttgg/Documents/Library/Flutter/running_text"
-      relative: false
+      path: ".."
+      relative: true
     source: path
-    version: "0.0.2"
+    version: "0.0.5"
   sky_engine:
     dependency: transitive
     description: flutter

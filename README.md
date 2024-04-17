@@ -10,29 +10,26 @@ horizontal directions, velocity, fading when appearing or disappearing.
 This is a minimalistic example:
 
 ```dart
-RunningTextView
-(
-data: RunningTextModel([
-"Learn how to find target keywords",
-"Learn how to find target keywords for any page with our keyword research guide."
-]
-)
+RunningTextView(
+  data: RunningTextModel([
+    "Learn how to find target keywords",
+    "Learn how to find target keywords for any page with our keyword research guide."
+  ])
 )
 ```
 
 Full options:
 
 ```dart
-RunningTextView
-(
-data: RunningTextModel(
-["Learn how to find target keywords",
-"Learn how to find target keywords for any page with our keyword research guide."],
-textStyle: const TextStyle(fontSize: 15),
-velocity: 50,
-direction: RunningTextDirection.leftToRight,
-fadeSide: RunningTextFadeSide.both
-)
+RunningTextView(
+  data: RunningTextModel([
+    "Learn how to find target keywords",
+    "Learn how to find target keywords for any page with our keyword research guide."],
+    textStyle: const TextStyle(fontSize: 15),
+    velocity: 50,
+    direction: RunningTextDirection.leftToRight,
+    fadeSide: RunningTextFadeSide.both
+  )
 )
 ```
 
