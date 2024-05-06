@@ -27,7 +27,7 @@ class _RunningTextViewState extends State<RunningTextView>
       RunningTextController(widget.data);
 
   /// Animation controller
-  late AnimationController _animationController;
+  AnimationController? _animationController;
 
   /// Animation double
   late Animation<double> _animation;
@@ -45,7 +45,7 @@ class _RunningTextViewState extends State<RunningTextView>
 
   @override
   void dispose() {
-    _animationController.dispose();
+    _animationController?.dispose();
     super.dispose();
   }
 
@@ -60,20 +60,20 @@ class _RunningTextViewState extends State<RunningTextView>
         final double fadeWidth = widgetMaxWidth / 20;
         final (double, double) point = _controller.getPoint(widgetMaxWidth);
         final int time = _controller.getTime(widgetMaxWidth);
+        _animationController?.dispose();
         if (statusListener != null) {
-          _animationController.dispose();
           _animation.removeStatusListener(statusListener!);
         }
 
         _animationController = AnimationController(
             vsync: this, duration: Duration(microseconds: time));
-        _animationController.forward();
+        _animationController?.forward();
         statusListener = listenStatus;
 
         _animation = Tween<double>(
           begin: point.$1,
           end: point.$2,
-        ).animate(_animationController);
+        ).animate(_animationController!);
 
         _animation.addStatusListener(statusListener!);
 

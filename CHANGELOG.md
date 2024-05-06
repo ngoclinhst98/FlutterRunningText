@@ -22,6 +22,6 @@ Update description for the package
 
 Fix time gap error when text overflow
 
-## 0.0.8
+## 0.0.8 - 0.0.9
 
-Fixed missing AnimationController dispose
+Fixed AnimationController dispose
