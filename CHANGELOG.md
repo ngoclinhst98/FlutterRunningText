@@ -25,3 +25,7 @@ Fix time gap error when text overflow
 ## 0.0.8 - 0.0.9
 
 Fixed AnimationController dispose
+
+## 0.1.0
+
+Add event when text is pressed

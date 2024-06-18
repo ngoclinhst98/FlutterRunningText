@@ -7,6 +7,9 @@ class RunningTextModel {
   /// The text style for content
   TextStyle? textStyle;
 
+  /// Line break of text
+  bool? softWrap;
+
   /// Running text velocity
   double velocity;
 
@@ -16,11 +19,21 @@ class RunningTextModel {
   /// The edges of the Running Text will be blurred
   RunningTextFadeSide fadeSide;
 
+  /// Event when text is touched
+  List<Function()>? tapEvents;
+
+  /// Default event when touching text
+  Function()? defaultTapEvent;
+
+  /// Constructor
   RunningTextModel(this.texts,
       {TextStyle? textStyle,
+      this.softWrap,
       this.velocity = 50,
       this.direction = RunningTextDirection.rightToLeft,
-      this.fadeSide = RunningTextFadeSide.both}) {
+      this.fadeSide = RunningTextFadeSide.both,
+      this.tapEvents,
+      this.defaultTapEvent}) {
     TextStyle textStyleTemp = textStyle ?? const TextStyle();
     if (textStyleTemp.fontSize == null) {
       textStyleTemp = textStyleTemp.copyWith(fontSize: 16);

@@ -46,6 +46,16 @@ class RunningTextController {
     return runningTextData.texts.elementAtOrNull(index) ?? "";
   }
 
+  /// Get tap event at the specified position
+  Function()? getTapEvent(int index) {
+    final tapEvent = runningTextData.tapEvents?.elementAtOrNull(index);
+    if (tapEvent == null) {
+      return runningTextData.defaultTapEvent;
+    }
+
+    return tapEvent;
+  }
+
   /// Blur running text
   ShaderMask makeFade(double widgetMaxWidth, double fadeWidth, Widget child) {
     switch (runningTextData.fadeSide) {

@@ -88,11 +88,17 @@ class _RunningTextViewState extends State<RunningTextView>
                     fadeWidth,
                     Transform.translate(
                       offset: Offset(_animation.value, 0),
-                      child: Text(_controller.getTextAt(_currentTextIndex),
-                          textAlign: TextAlign.start,
-                          textScaler: TextScaler.noScaling,
-                          textWidthBasis: TextWidthBasis.parent,
-                          style: _controller.runningTextData.textStyle),
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: _controller.getTapEvent(_currentTextIndex),
+                        child: Text(_controller.getTextAt(_currentTextIndex),
+                            textAlign: TextAlign.start,
+                            softWrap: widget.data.softWrap,
+                            textScaler: TextScaler.noScaling,
+                            textWidthBasis: TextWidthBasis.parent,
+                            style: _controller.runningTextData.textStyle),
+                      ),
                     ));
               },
             ),
