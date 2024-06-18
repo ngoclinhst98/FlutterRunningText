@@ -1,7 +1,7 @@
 name: running_text
 description: 'Flutter widget "running text". Allows running an string list. Provides customizations including two
 horizontal directions, velocity, fading when appearing or disappearing.'
-version: 0.1.0
+version: 0.1.1
 homepage: https://ngoclinhst98.github.io/
 
 
