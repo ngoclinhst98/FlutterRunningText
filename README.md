@@ -13,7 +13,8 @@ This is a minimalistic example:
 RunningTextView(
   data: RunningTextModel([
     "Learn how to find target keywords",
-    "Learn how to find target keywords for any page with our keyword research guide."
+    "Learn how to find target keywords for any page with our keyword research guide.",
+    "Thanks for using! Follow me for more!"
   ])
 )
 ```
@@ -25,10 +26,22 @@ RunningTextView(
   data: RunningTextModel([
     "Learn how to find target keywords",
     "Learn how to find target keywords for any page with our keyword research guide."],
-    textStyle: const TextStyle(fontSize: 15),
+    textStyle: const TextStyle(fontSize: 15, overflow: TextOverflow.visible),
+    softWrap: false,
     velocity: 50,
     direction: RunningTextDirection.leftToRight,
     fadeSide: RunningTextFadeSide.both
+    tapEvents: [
+      () {
+        log("Tap 1");
+      },
+      () {
+        log("Tap 2");
+      }
+    ], 
+    defaultTapEvent: () {
+      log("Default tap");
+    }
   )
 )
 ```
