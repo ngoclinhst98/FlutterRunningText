@@ -25,7 +25,8 @@ Full options:
 RunningTextView(
   data: RunningTextModel([
     "Learn how to find target keywords",
-    "Learn how to find target keywords for any page with our keyword research guide."],
+    "Learn how to find target keywords for any page with our keyword research guide.",
+    "Thanks for using! Follow me for more!"],
     textStyle: const TextStyle(fontSize: 15, overflow: TextOverflow.visible),
     softWrap: false,
     velocity: 50,
