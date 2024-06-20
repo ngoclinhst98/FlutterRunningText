@@ -5,8 +5,9 @@ import 'package:running_text/src/model.dart';
 /// Running Text widget with data
 /// RunningTextView(
 ///   data: RunningTextModel([
-///   "Learn how to find target keywords",
-///   "Learn how to find target keywords for any page with our keyword research guide."
+///     "Learn how to find target keywords",
+///     "Learn how to find target keywords for any page with our keyword research guide.",
+///     "Thanks for using! Follow me for more!"
 ///   ])
 /// )
 
@@ -86,12 +87,12 @@ class _RunningTextViewState extends State<RunningTextView>
                 return _controller.makeFade(
                     widgetMaxWidth,
                     fadeWidth,
-                    Transform.translate(
-                      offset: Offset(_animation.value, 0),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: _controller.getTapEvent(_currentTextIndex),
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: _controller.getTapEvent(_currentTextIndex),
+                      child: Transform.translate(
+                        offset: Offset(_animation.value, 0),
                         child: Text(_controller.getTextAt(_currentTextIndex),
                             textAlign: TextAlign.start,
                             softWrap: widget.data.softWrap,

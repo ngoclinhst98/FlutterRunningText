@@ -29,3 +29,7 @@ Fixed AnimationController dispose
 ## 0.1.0 - 0.1.1
 
 Add event when text is pressed
+
+## 0.1.2
+
+Fix when pressing long text
